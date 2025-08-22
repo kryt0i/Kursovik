@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuickFix - Отчеты</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0; padding: 0;
+    }
+    header {
+      background-color: #2e86de;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 {
+      color: #2e86de;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>QuickFix - Отчеты</h1>
+    <nav>
+      <a href="index.html">Главная</a> |
+      <a href="reports.html">Отчеты</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Статистика заявок по статусам</h2>
+    <div id="stats">
+      <p>Загрузка...</p>
+    </div>
+  </main>
+
+  <script>
+    async function loadStats() {
+      const res = await fetch('/api/requests');
+      const requests = await res.json();
+
+      const total = requests.length;
+      const waitCount = requests.filter(r => r.status === 'Ожидает').length;
+      const doneCount = requests.filter(r => r.status === 'Выполнено').length;
+
+      const statsDiv = document.getElementById('stats');
+      statsDiv.innerHTML = `
+        <p>Всего заявок: <strong>${total}</strong></p>
+        <p>Ожидают выполнения: <strong>${waitCount}</strong></p>
+        <p>Выполнено: <strong>${doneCount}</strong></p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', loadStats);
+  </script>
+</body>
+</html>

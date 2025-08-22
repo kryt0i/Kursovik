@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>QuickFix — Учет заявок</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>QuickFix — Учет заявок</h1>
+    <nav>
+      <a href="/">Главная</a>
+      <a href="/requests.html">Заявки</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Добавить новую заявку</h2>
+      <form id="requestForm">
+        <input type="text" name="client" placeholder="ФИО или компания" required />
+        <input type="text" name="device" placeholder="Тип устройства" required />
+        <textarea name="issue" placeholder="Описание неисправности" required></textarea>
+        <button type="submit">Создать заявку</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Список заявок</h2>
+      <table id="requestTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Клиент</th>
+            <th>Устройство</th>
+            <th>Описание</th>
+            <th>Статус</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="/script.js"></script>
+</body>
+</html>
