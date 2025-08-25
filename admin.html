@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Администрирование</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Система учета заявок</h1>
+        <nav id="main-nav"></nav>
+        <div>
+            <span id="user-info"></span>
+            <button id="logout-btn">Выйти</button>
+        </div>
+    </header>
+    <main class="container">
+        <div id="admin-panel">
+            <h2>Панель администратора</h2>
+            
+            <section class="admin-section">
+                <h3>Управление пользователями</h3>
+                <div id="users-list"></div>
+            </section>
+            
+            <!-- НОВЫЙ БЛОК -->
+            <section class="admin-section">
+                <h3>Управление всеми заявками</h3>
+                <div id="requests-list-admin"></div>
+            </section>
+            
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>```
+
+### Шаг 3: Обновляем CSS для отступов
+
+Добавим небольшой отступ между секциями на странице администратора для красоты.
+
+#### **Файл `css/style.css` (ДОПОЛНЕН)**
+
+Добавьте этот класс в самый конец вашего файла `css/style.css`:
+
+```css
+.admin-section {
+    margin-bottom: 40px;
+}

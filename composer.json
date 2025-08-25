@@ -1,0 +1,8 @@
+```json
+{
+    "require": {
+        "firebase/php-jwt": "v6.3.0",
+        "mailgun/mailgun-php": "^3.5"
+    }
+}
+```

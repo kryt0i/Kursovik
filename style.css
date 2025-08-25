@@ -1,0 +1,28 @@
+/* Общие стили */
+body { font-family: sans-serif; background-color: #f4f4f4; color: #333; margin: 0; }
+.container { max-width: 900px; margin: 20px auto; padding: 20px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+.hidden { display: none !important; }
+input, textarea, button, select { padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; }
+button { cursor: pointer; background-color: #007bff; color: white; border: none; }
+
+/* Стили для страницы входа */
+.auth-page-container { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+#auth-container { max-width: 400px; width: 100%; }
+
+/* Шапка сайта */
+.main-header { display: flex; justify-content: space-between; align-items: center; background-color: #333; color: white; padding: 10px 20px; }
+.main-header h1 { margin: 0; font-size: 1.5em; }
+.main-header #logout-btn { background-color: #dc3545; }
+.main-header nav a { color: #f4f4f4; text-decoration: none; margin: 0 10px; }
+.main-header nav a.active { font-weight: bold; }
+
+/* Формы */
+form { display: flex; flex-direction: column; gap: 12px; }
+#create-request-container { margin-bottom: 30px; }
+
+/* Карточки */
+.request-card, .user-card { padding: 15px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px; }
+.request-card h4 { margin: 0 0 10px; }
+.request-card .actions { margin-top: 15px; display: flex; gap: 10px; align-items: center; }
+.user-card { display: flex; justify-content: space-between; align-items: center; }
+.delete-btn { background-color: #dc3545; }
